@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+@keyframes partner-slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-partner-slide {
+  animation: partner-slide 20s linear infinite;
+}
+
+.hero-book-stage {
+  perspective: 1400px;
+}
+
+.hero-book-card {
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform 0.4s ease-in-out;
+  backface-visibility: hidden;
+}
+
+.hero-book-card.flip-out {
+  transform: rotateY(-90deg);
+}
+
+.hero-book-card.flip-in {
+  transform: rotateY(90deg);
+  transition: none;
+}
+
+@keyframes gold-blink {
+  0%,
+  45% {
+    background-color: #16a34a;
+    box-shadow: none;
+    filter: brightness(1);
+  }
+  50%,
+  95% {
+    background-color: #86efac;
+    box-shadow: 0 0 18px 4px rgba(134, 239, 172, 0.75);
+    filter: brightness(1.08);
+    color: #081c24;
+  }
+  100% {
+    background-color: #16a34a;
+    box-shadow: none;
+    filter: brightness(1);
+  }
+}
+
+.btn-gold-flash {
+  animation: gold-blink 0.9s step-end infinite;
+}
+
+@keyframes green-blink {
+  0%,
+  45% {
+    background-color: #16a34a;
+    box-shadow: none;
+    filter: brightness(1);
+  }
+  50%,
+  95% {
+    background-color: #86efac;
+    box-shadow: 0 0 18px 4px rgba(134, 239, 172, 0.75);
+    filter: brightness(1.15);
+    color: #081c24;
+  }
+  100% {
+    background-color: #16a34a;
+    box-shadow: none;
+    filter: brightness(1);
+  }
+}
+
+.btn-green-flash {
+  animation: green-blink 0.9s step-end infinite;
+}
