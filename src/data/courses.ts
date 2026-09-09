@@ -1,4 +1,5 @@
 import { Course } from "../types/Course";
+import { jewelleryAppraiserSyllabus } from "./jewelleryAppraiserSyllabus";
 
 const sharedIncludes = [
   "Online eligibility test access",
@@ -66,13 +67,12 @@ export const courses: Course[] = [
       includes: [...sharedIncludes],
     },
     topics: [
-      "Jewellery design fundamentals",
-      "Metal purity and hallmarking",
-      "Stone setting and craftsmanship",
-      "Weight and valuation basics",
-      "Appraisal documentation standards",
-      "Industry ethics and compliance",
+      "Part 1 — Gold is gold",
+      "Part 2 — Precious Jewelry",
+      "Part 3 — Gold and Jewelry Appraiser — Pledge Banking",
+      "Part 4 — Commodity — Money — Banking",
     ],
+    syllabus: jewelleryAppraiserSyllabus,
     eligibility: [...sharedEligibility],
     importantNotes: [...sharedNotes],
   },

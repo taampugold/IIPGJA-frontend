@@ -4,6 +4,7 @@ import PageContainer from "../components/layout/PageContainer";
 import { courses } from "../data/courses";
 import CourseHero from "../components/courses/CourseHero";
 import CourseOverview from "../components/courses/CourseOverview";
+import CourseSyllabus from "../components/courses/CourseSyllabus";
 import CourseFAQ from "../components/courses/CourseFAQ";
 import CourseSidebar from "../components/courses/CourseSidebar";
 
@@ -46,6 +47,7 @@ const CourseDetails = () => {
           <div className="grid gap-12 lg:grid-cols-3">
             <div className="space-y-16 lg:col-span-2">
               <CourseOverview course={course} />
+              <CourseSyllabus course={course} />
               <CourseFAQ />
             </div>
             <div>

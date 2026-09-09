@@ -25,6 +25,17 @@ export interface CoursePriceDetails {
   examFee: number;
 }
 
+export interface SyllabusUnit {
+  number: number;
+  title: string;
+}
+
+export interface SyllabusPart {
+  id: number;
+  title: string;
+  units: SyllabusUnit[];
+}
+
 export interface Course {
   id: number;
   title: string;
@@ -45,4 +56,5 @@ export interface Course {
   topics: string[];
   eligibility: string[];
   importantNotes: string[];
+  syllabus?: SyllabusPart[];
 }
