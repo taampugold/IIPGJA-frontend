@@ -3,7 +3,6 @@ import PageLayout from "../components/layout/PageLayout";
 import CalculatorHero from "../components/gold-calculator/CalculatorHero";
 import GoldTestingBenefits from "../components/gold-calculator/GoldTestingBenefits";
 import CalculatorForm from "../components/gold-calculator/CalculatorForm";
-import SurfaceSelector from "../components/gold-calculator/SurfaceSelector";
 import GoldReport from "../components/gold-calculator/GoldReport";
 import GoldTestingSteps from "../components/gold-calculator/GoldTestingSteps";
 import {
@@ -24,8 +23,10 @@ const GoldCalculator = () => {
   const [materialPhoto, setMaterialPhoto] = useState("");
   const [loanNo, setLoanNo] = useState("");
   const [goldSkinPercentage, setGoldSkinPercentage] = useState("");
-  const [showSurfaceSelector, setShowSurfaceSelector] = useState(false);
-  const [surface, setSurface] = useState("yellow");
+  const [sealOrMark, setSealOrMark] = useState("");
+  const [referenceIdentityMark, setReferenceIdentityMark] = useState("");
+  const [showReport, setShowReport] = useState(false);
+  const [surface, setSurface] = useState("");
 
   const handleDensityCalculated = (result: {
     airWeight: number;
@@ -35,7 +36,7 @@ const GoldCalculator = () => {
     setAirWeight(result.airWeight);
     setWaterWeight(result.waterWeight);
     setDensity(result.density);
-    setShowSurfaceSelector(true);
+    setShowReport(true);
   };
 
   const currentDensity = useMemo(() => {
@@ -72,13 +73,15 @@ const GoldCalculator = () => {
     setDensity(null);
     setAirWeight(0);
     setWaterWeight(0);
-    setSurface("yellow");
-    setShowSurfaceSelector(false);
+    setSurface("");
+    setShowReport(false);
     setCompanyName("");
     setCustomerName("");
     setMaterialPhoto("");
     setLoanNo("");
     setGoldSkinPercentage("");
+    setSealOrMark("");
+    setReferenceIdentityMark("");
   };
 
   return (
@@ -100,14 +103,15 @@ const GoldCalculator = () => {
           onLoanNoChange={setLoanNo}
           goldSkinPercentage={goldSkinPercentage}
           onGoldSkinPercentageChange={setGoldSkinPercentage}
+          sealOrMark={sealOrMark}
+          onSealOrMarkChange={setSealOrMark}
+          referenceIdentityMark={referenceIdentityMark}
+          onReferenceIdentityMarkChange={setReferenceIdentityMark}
+          surface={surface}
+          onSurfaceChange={setSurface}
           onCalculate={handleDensityCalculated}
         />
-        {showSurfaceSelector && density !== null && (
-          <>
-            <SurfaceSelector
-              surface={surface}
-              onSurfaceChange={setSurface}
-            />
+        {showReport && density !== null && (
             <GoldReport
               materialType={materialType}
               companyName={companyName}
@@ -115,6 +119,8 @@ const GoldCalculator = () => {
               materialPhoto={materialPhoto}
               loanNo={loanNo}
               goldSkinPercentage={goldSkinPercentage}
+              sealOrMark={sealOrMark}
+              referenceIdentityMark={referenceIdentityMark}
               airWeight={airWeight}
               waterWeight={waterWeight}
               density={density}
@@ -127,7 +133,6 @@ const GoldCalculator = () => {
               goldPurityWeight22={goldPurityWeight22}
               onReset={resetCalculator}
             />
-          </>
         )}
       </main>
     </PageLayout>

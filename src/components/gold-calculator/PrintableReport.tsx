@@ -11,11 +11,12 @@ interface PrintableReportProps {
   materialType: string;
   loanNo: string;
   goldSkinPercentage: string;
+  sealOrMark: string;
+  referenceIdentityMark: string;
   airWeight: number;
   waterWeight: number;
   density: number;
   surface: string;
-  correction: number;
   touch: number;
   carat: number;
   goldPurityWeight24: number;
@@ -31,11 +32,12 @@ const PrintableReport = forwardRef<HTMLDivElement, PrintableReportProps>(
       materialType,
       loanNo,
       goldSkinPercentage,
+      sealOrMark,
+      referenceIdentityMark,
       airWeight,
       waterWeight,
       density,
       surface,
-      correction,
       touch,
       carat,
       goldPurityWeight24,
@@ -71,48 +73,15 @@ const PrintableReport = forwardRef<HTMLDivElement, PrintableReportProps>(
           <div className="min-h-0 shrink">
             <CertificateHeader />
 
-            <div className="mt-2 flex items-stretch justify-between gap-4 rounded-lg border border-[#c8a34d] bg-[#fffdf7] p-2.5">
-              <div className="min-w-0 flex-1 space-y-1.5 self-center text-sm">
-                <div>
-                  <p className="text-[10px] uppercase tracking-wide text-gray-500">
-                    Company Name
-                  </p>
-                  <p className="font-semibold text-[#081c24]">{companyName}</p>
-                </div>
-                <div>
-                  <p className="text-[10px] uppercase tracking-wide text-gray-500">
-                    Customer Name
-                  </p>
-                  <p className="font-semibold text-[#081c24]">{customerName}</p>
-                </div>
-                <div>
-                  <p className="text-[10px] uppercase tracking-wide text-gray-500">
-                    Loan No.
-                  </p>
-                  <p className="font-semibold text-[#081c24]">{loanNo}</p>
-                </div>
-                <div>
-                  <p className="text-[10px] uppercase tracking-wide text-gray-500">
-                    Gold Skin Percentage
-                  </p>
-                  <p className="font-semibold text-[#081c24]">
-                    {Number(goldSkinPercentage || 0).toFixed(2)} Touch
-                  </p>
-                </div>
-              </div>
-              {materialPhoto && (
-                <div className="h-28 w-24 shrink-0 overflow-hidden rounded-md border border-[#c8a34d]">
-                  <img
-                    src={materialPhoto}
-                    alt="Tested material"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              )}
-            </div>
-
             <ReportTable
               materialType={materialType}
+              companyName={companyName}
+              customerName={customerName}
+              materialPhoto={materialPhoto}
+              loanNo={loanNo}
+              goldSkinPercentage={goldSkinPercentage}
+              sealOrMark={sealOrMark}
+              referenceIdentityMark={referenceIdentityMark}
               airWeight={airWeight}
               waterWeight={waterWeight}
               density={density}
@@ -124,7 +93,7 @@ const PrintableReport = forwardRef<HTMLDivElement, PrintableReportProps>(
           </div>
 
           <div className="min-h-0 shrink">
-            <ReportRemarks surface={surface} correction={correction} />
+            <ReportRemarks surface={surface} />
           </div>
 
           <div className="mt-auto shrink-0 pb-0.5">

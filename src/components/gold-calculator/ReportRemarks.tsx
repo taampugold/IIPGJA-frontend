@@ -1,9 +1,8 @@
 interface ReportRemarksProps {
   surface: string;
-  correction: number;
 }
 
-const ReportRemarks = ({ surface, correction }: ReportRemarksProps) => {
+const ReportRemarks = ({ surface }: ReportRemarksProps) => {
   const isBrown = surface.toLowerCase() === "brown";
   const observedColour =
     surface.charAt(0).toUpperCase() + surface.slice(1).toLowerCase();
@@ -24,16 +23,7 @@ const ReportRemarks = ({ surface, correction }: ReportRemarksProps) => {
         </p>
 
         <p>
-          • Correction value of
-          <span className="font-semibold text-[#081c24]">
-            {" "}
-            {correction.toFixed(2)}{" "}
-          </span>
-          has been applied from the measured current density range. For
-          <span className="font-semibold"> White / Yellow Gold </span>
-          this value is subtracted from current density. For
-          <span className="font-semibold"> Brown Gold </span>
-          this value is added to current density.
+          • The correction value has been applied based on the surface colour characteristics.
         </p>
 
         <p>
@@ -46,8 +36,8 @@ const ReportRemarks = ({ surface, correction }: ReportRemarksProps) => {
           the adjusted density has been calculated using
           <span className="font-semibold text-[#081c24]">
             {isBrown
-              ? ` Current Density + ${correction.toFixed(2)}`
-              : ` Current Density − ${correction.toFixed(2)}`}
+              ? " Current Density + Correction"
+              : " Current Density − Correction"}
           </span>
           .
         </p>
@@ -58,16 +48,15 @@ const ReportRemarks = ({ surface, correction }: ReportRemarksProps) => {
         </p>
 
         <p>
-          • The value of Gold Metal may vary by ± 0.5%. The value of Gold
-          Jewellery and Particles Jewellery may vary by ± 1–2%.
+          • The value of Gold Metal, Gold Jewellery and Particles Jewellery may vary by correction value.
         </p>
       </div>
 
       <div className="mt-1.5 rounded-md border-l-4 border-[#b8903d] bg-yellow-50 px-2.5 py-1.5">
         <p className="text-[10px] leading-3 text-gray-600">
           <strong>Disclaimer:</strong> This report is generated based on the
-          Density Method and Touch Stone Surface Colour Method. Final purity may
-          vary depending on manufacturing process, alloy composition and
+          Density Method and Touch Stone Surface Colour Method.
+          <br /> Final purity may vary depending on manufacturing process, alloy composition and
           gemstone settings.
         </p>
         <p className="mt-1 text-[10px] leading-3 text-gray-600">

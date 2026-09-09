@@ -4,7 +4,6 @@ import {
   calculateDensity,
   validateInputs,
 } from "../../utils/goldCalculator";
-import { useNavigate } from "react-router-dom";
 import PageContainer from "../layout/PageContainer";
 export interface DensityCalculation {
   airWeight: number;
@@ -25,6 +24,12 @@ interface CalculatorFormProps {
   onLoanNoChange: (value: string) => void;
   goldSkinPercentage: string;
   onGoldSkinPercentageChange: (value: string) => void;
+  sealOrMark: string;
+  onSealOrMarkChange: (value: string) => void;
+  referenceIdentityMark: string;
+  onReferenceIdentityMarkChange: (value: string) => void;
+  surface: string;
+  onSurfaceChange: (value: string) => void;
   onCalculate: (result: DensityCalculation) => void;
 }
 
@@ -44,6 +49,12 @@ const CalculatorForm = ({
   onLoanNoChange,
   goldSkinPercentage,
   onGoldSkinPercentageChange,
+  sealOrMark,
+  onSealOrMarkChange,
+  referenceIdentityMark,
+  onReferenceIdentityMarkChange,
+  surface,
+  onSurfaceChange,
   onCalculate,
 }: CalculatorFormProps) => {
 
@@ -83,7 +94,6 @@ const CalculatorForm = ({
       density,
     });
   }, [airWeight, waterWeight]);
-  const navigate = useNavigate();
   const [currentTime, setCurrentTime] = useState(new Date());
   useEffect(() => {
     const timer = setInterval(() => {
@@ -137,6 +147,11 @@ const CalculatorForm = ({
                   <li>Use purified water.</li>
                 </ol>
               </div>
+              <img
+                src="/images/gold_testing/stone.png"
+                alt="Touch Stone Gold Testing"
+                className="w-full max-w-[240px] object-contain drop-shadow-2xl"
+              />
             </div>
 
             {/* ================= RIGHT SIDE CALCULATOR ================= */}
@@ -224,6 +239,28 @@ const CalculatorForm = ({
                     Touch
                   </span>
                 </div>
+
+                <label className="max-w-[14rem] text-xl font-semibold leading-tight text-white">
+                  Seal or Mark
+                </label>
+                <input
+                  type="text"
+                  value={sealOrMark}
+                  onChange={(e) => onSealOrMarkChange(e.target.value)}
+                  placeholder="Enter seal or mark"
+                  className={fieldInputClass}
+                />
+
+                <label className="max-w-[14rem] text-xl font-semibold leading-tight text-white">
+                  Reference ID Mark
+                </label>
+                <input
+                  type="text"
+                  value={referenceIdentityMark}
+                  onChange={(e) => onReferenceIdentityMarkChange(e.target.value)}
+                  placeholder="Enter reference ID mark"
+                  className={fieldInputClass}
+                />
               </div>
 
               {/* Material Photo */}
@@ -247,7 +284,7 @@ const CalculatorForm = ({
                     />
                   ) : (
                     <span className="flex h-full w-full items-center justify-center px-2 text-center text-sm font-semibold text-gray-200">
-                      Upload <br/> Material Photo
+                      Upload <br /> Gold metal or jewellery
                     </span>
                   )}
                   <input
@@ -358,13 +395,46 @@ const CalculatorForm = ({
                 </span>
               </div>
 
+              <div className="mb-8 flex flex-nowrap items-center gap-4">
+                <label className="shrink-0 whitespace-nowrap text-2xl font-semibold text-white">
+                  Touch Stone <br/>Surface Colour
+                </label>
+                <div className="flex flex-nowrap gap-3">
+                  {[
+                    { id: "white", title: "White Gold" },
+                    { id: "yellow", title: "Yellow Gold" },
+                    { id: "brown", title: "Brown Gold" },
+                  ].map((item) => (
+                    <label
+                      key={item.id}
+                      className="flex shrink-0 cursor-pointer items-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-3 transition hover:border-[#d4af37] lg:gap-3 lg:px-5"
+                    >
+                      <input
+                        type="radio"
+                        name="surface"
+                        value={item.id}
+                        checked={surface === item.id}
+                        onChange={() => onSurfaceChange(item.id)}
+                        className="h-5 w-5 cursor-pointer accent-red-600"
+                      />
+                      <span className="whitespace-nowrap font-semibold text-gray-800">
+                        {item.title}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
               {/* Error */}
               {error && (
                 <div className="rounded-xl border border-red-300 bg-red-50 p-4 text-red-600">
                   {error}
                 </div>
               )}
-              <div className="mt-10 flex justify-end">
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+                <span className="text-center text-xl font-bold text-[#f3c96b] sm:text-2xl">
+                  Gold Purity Testing Digital Photographic Certificate
+                </span>
                 <button
                   type="button"
                   onClick={() => {
@@ -401,11 +471,15 @@ const CalculatorForm = ({
                       return;
                     }
 
+                    if (!surface) {
+                      setError("Please select the touch stone surface colour.");
+                      return;
+                    }
+
                     onCalculate(calculation);
 
-                    // Scroll to Surface Colour Testing
                     setTimeout(() => {
-                      const element = document.getElementById("surface-selector");
+                      const element = document.getElementById("gold-testing-results");
 
                       if (element) {
                         element.scrollIntoView({
@@ -415,9 +489,9 @@ const CalculatorForm = ({
                       }
                     }, 100);
                   }}
-                   className="flex h-12 w-[100px] items-center justify-center rounded-xl bg-[#f7ff8d] text-lg font-semibold text-[#023712] transition hover:bg-white"
->
-                  Next →
+                  className="btn-gold-flash relative inline-flex items-center overflow-hidden rounded-xl bg-[#b8903d] px-6 py-3 text-lg font-semibold text-white transition hover:bg-[#9c7b31]"
+                >
+                  <span className="relative z-10">click here</span>
                 </button>
               </div>
             </div>
