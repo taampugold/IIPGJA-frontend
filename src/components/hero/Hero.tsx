@@ -4,7 +4,7 @@ import HeroBooksAnimation from "./HeroBooksAnimation";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[560px] w-full overflow-hidden sm:h-[90vh] sm:min-h-[650px]">
+    <section className="relative min-h-[520px] w-full overflow-hidden pb-16 sm:min-h-[640px] sm:pb-24 lg:min-h-[90vh] lg:pb-0">
 
       <div className="absolute inset-0 bg-slate-900" />
 

@@ -26,7 +26,7 @@ const Footer = () => {
     <footer className="bg-slate-900 text-white">
       {/* Top Footer */}
 
-      <div className={`${pageWidthClass} grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-4`}>
+      <div className={`${pageWidthClass} grid gap-10 py-10 sm:py-16 md:grid-cols-2 lg:grid-cols-4`}>
 
         {/* Logo & About */}
 
@@ -161,14 +161,16 @@ const Footer = () => {
             </a>
 
             <a
-              href="mailto:iipgja.org@gmail.com"
+              href="mailto:iipgja.contact@gmail.com"
               className="flex gap-4 transition hover:text-yellow-400"
             >
               <FaEnvelope className="mt-1 shrink-0 text-yellow-500" />
 
-              <span>
-              iipgja.org@gmail.com
-              </span>
+            <div className="min-w-0">
+              <p className="break-all text-sm leading-7">
+              iipgja.contact@gmail.com
+              </p>
+            </div>
             </a>
 
           </div>

@@ -30,7 +30,7 @@ const CTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative overflow-hidden rounded-3xl border border-[#b8903d]/20 bg-white px-8 py-12 shadow-xl md:px-16 md:py-16"
+          className="relative overflow-hidden rounded-3xl border border-[#b8903d]/20 bg-white px-4 py-10 shadow-xl sm:px-8 md:px-16 md:py-16"
         >
           <div className="absolute -right-28 -top-28 h-72 w-72 rounded-full bg-[#b8903d]/10 blur-3xl" />
           <div className="absolute -bottom-28 -left-28 h-72 w-72 rounded-full bg-[#b8903d]/10 blur-3xl" />
@@ -69,7 +69,7 @@ const CTA = () => {
             <div className="mt-12 flex flex-wrap justify-center gap-4 md:gap-5">
               <Link
                 to="/login"
-                className="group flex items-center gap-3 rounded-xl bg-[#b8903d] px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#9c7b31]"
+                className="group flex w-full items-center justify-center gap-3 rounded-xl bg-[#b8903d] px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#9c7b31] sm:w-auto"
               >
                 Apply Now
                 <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -77,7 +77,7 @@ const CTA = () => {
 
               <Link
                 to="/contact"
-                className="group flex items-center gap-3 rounded-xl border-2 border-slate-300 px-8 py-4 font-semibold text-slate-800 transition-all duration-300 hover:border-[#b8903d] hover:bg-[#b8903d]/10 hover:text-[#9c7b31]"
+                className="group flex w-full items-center justify-center gap-3 rounded-xl border-2 border-slate-300 px-8 py-4 font-semibold text-slate-800 transition-all duration-300 hover:border-[#b8903d] hover:bg-[#b8903d]/10 hover:text-[#9c7b31] sm:w-auto"
               >
                 <FaPhoneAlt className="transition-transform duration-300 group-hover:rotate-12" />
                 Contact for Enquiry

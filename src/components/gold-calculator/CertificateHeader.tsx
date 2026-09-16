@@ -17,29 +17,29 @@ const CertificateHeader = ({ reportNumber }: CertificateHeaderProps) => {
   return (
     <div className="relative mb-3 rounded-xl border-[4px] border-[#c8a34d] bg-white">
       <div className="relative p-3">
-        <div className="flex items-stretch justify-between gap-3">
+        <div className="flex flex-col items-stretch justify-between gap-3 sm:flex-row">
           {/* Title */}
           <div className="flex min-w-0 flex-1 items-stretch overflow-hidden rounded-lg bg-[#6a511e] text-white">
             <img
               src="/images/IIPGJA-logo.png"
               alt="IIPGJA"
-              className="mx-4 mt-0.5 h-[6.5rem] w-[6.5rem] shrink-0 self-center object-contain"
+              className="mx-2 mt-0.5 h-16 w-16 shrink-0 self-center object-contain sm:mx-4 sm:h-[6.5rem] sm:w-[6.5rem]"
             />
-            <div className="flex min-w-0 flex-1 flex-col justify-center py-2.5 pr-4 text-left">
-              <h2 className="text-base font-bold leading-snug tracking-wide sm:text-xl">
+            <div className="flex min-w-0 flex-1 flex-col justify-center py-2.5 pr-3 text-left sm:pr-4">
+              <h2 className="text-sm font-bold leading-snug tracking-wide sm:text-xl">
                 TAMPU&apos;S GOLD PURITY TESTING
                 <span className="mt-0.5 block">
-                  DIGITAL PHOTOGRAPHIC <br/> CERTIFICATE
+                  DIGITAL PHOTOGRAPHIC CERTIFICATE
                 </span>
               </h2>
-              <p className="mt-1.5 text-[11px] font-medium tracking-[0.18em] text-white sm:text-sm">
+              <p className="mt-1.5 text-[11px] font-medium tracking-[0.12em] text-white sm:text-sm sm:tracking-[0.18em]">
                 Density &amp; Touch Stone Surface Method
               </p>
             </div>
           </div>
 
           {/* Certificate meta on right */}
-          <div className="w-[180px] shrink-0 space-y-2 rounded-lg border border-[#c8a34d] bg-[#fff8e8] px-3 py-2 text-right">
+          <div className="w-full space-y-2 rounded-lg border border-[#c8a34d] bg-[#fff8e8] px-3 py-2 text-left sm:w-[180px] sm:shrink-0 sm:text-right">
             <div>
               <p className="text-[10px] text-gray-500">Certificate No.</p>
               <h3 className="text-xs font-bold text-[#b8903d]">{reportId}</h3>

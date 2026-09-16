@@ -23,24 +23,24 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex h-20 w-full min-w-0 items-center px-4 py-2 sm:h-24 sm:px-6 lg:h-32 lg:px-8">
+      <nav className="flex h-16 w-full min-w-0 items-center gap-2 px-3 py-1.5 sm:h-20 sm:px-6 lg:h-24 lg:px-8 xl:h-32">
         <Link
           to="/"
-          className="flex h-full min-h-0 shrink-0 items-stretch bg-black"
+          className="flex h-full min-h-0 min-w-0 shrink items-stretch bg-black"
         >
-          <Logo className="h-full w-auto object-contain p-2" />
-          <div className="flex flex-col justify-center pr-3 leading-tight sm:pr-4">
-            <h1 className="text-xl font-bold text-[#f3c96b] sm:text-3xl lg:text-4xl">
+          <Logo className="h-full w-auto max-w-[4.5rem] object-contain p-1.5 sm:max-w-none sm:p-2" />
+          <div className="flex min-w-0 flex-col justify-center pr-2 leading-tight sm:pr-4">
+            <h1 className="text-lg font-bold text-[#f3c96b] sm:text-3xl xl:text-4xl">
               IIPGJA
             </h1>
-            <p className="hidden max-w-[280px] text-xs leading-snug text-gray-300 sm:block lg:max-w-[320px] lg:text-lg">
+            <p className="hidden max-w-[280px] text-xs leading-snug text-gray-300 sm:block xl:max-w-[320px] xl:text-lg">
               Indian Institute of Precious <br />
               Gem & Jewellery Appraisers
             </p>
           </div>
         </Link>
 
-        <div className="hidden min-w-0 flex-1 justify-center lg:flex">
+        <div className="hidden min-w-0 flex-1 justify-center xl:flex">
           <ul className="flex flex-wrap items-center justify-center gap-2 xl:gap-3">
             {menu.map((item) => (
               <li key={item.title}>
@@ -56,7 +56,7 @@ const Navbar = () => {
           type="button"
           onClick={() => setOpen(true)}
           aria-label="Open Menu"
-          className="ml-auto flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-300 text-slate-700 lg:hidden"
+          className="ml-auto flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-300 text-slate-700 xl:hidden"
         >
           <HiMenuAlt3 size={22} />
         </button>

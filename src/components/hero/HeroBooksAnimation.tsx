@@ -33,8 +33,8 @@ const HeroBooksAnimation = () => {
   const activeBook = bookImages[activeIndex];
 
   return (
-    <div className="hidden justify-center lg:flex">
-      <div className="hero-book-stage h-[min(600px,62vh)] w-[min(380px,34vw)] xl:h-[min(680px,72vh)] xl:w-[min(400px,32vw)]">
+    <div className="mt-2 flex justify-center lg:mt-0">
+      <div className="hero-book-stage h-[min(280px,42vh)] w-[min(200px,70vw)] sm:h-[min(380px,48vh)] sm:w-[min(250px,40vw)] xl:h-[min(680px,72vh)] xl:w-[min(400px,32vw)]">
         <div className={`hero-book-card ${flipClass}`}>
           <img
             src={activeBook.image}

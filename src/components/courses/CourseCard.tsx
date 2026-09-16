@@ -9,11 +9,11 @@ interface Props {
 const CourseCard = ({ course }: Props) => {
   return (
     <div className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
-      <div className="h-56 overflow-hidden">
+      <div className="flex h-56 items-center justify-center bg-[#faf9f6] p-4">
         <img
           src={course.image}
           alt={course.title}
-          className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+          className="h-full w-auto max-w-full object-contain transition duration-500 group-hover:scale-105"
         />
       </div>
 
@@ -58,8 +58,8 @@ const CourseCard = ({ course }: Props) => {
             </div>
           </div>
 
-          <span className="text-xl font-bold text-[#b8903d]">
-            {course.price}
+          <span className="rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-amber-800">
+            In Progress
           </span>
         </div>
 

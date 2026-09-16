@@ -10,12 +10,19 @@ html,
 body,
 #root {
   max-width: 100%;
+  min-width: 0;
   overflow-x: hidden;
 }
 
 body {
   margin: 0;
   font-family: Inter, sans-serif;
+  overflow-wrap: break-word;
+}
+
+img,
+video {
+  max-width: 100%;
 }
 
 @keyframes partner-slide {

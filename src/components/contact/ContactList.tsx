@@ -121,7 +121,7 @@ const ContactList = () => {
               transition={{ duration: 0.6 }}
               className="lg:col-span-4"
             >
-              <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+              <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8">
                 <span className="text-sm font-semibold uppercase tracking-wider text-[#b8903d]">
                   Contact Details
                 </span>
@@ -156,21 +156,21 @@ const ContactList = () => {
                     </div>
                   </a>
 
-                  <a href="mailto:iipgja.org@gmail.com" className="flex gap-4">
+                  <a href="mailto:iipgja.contact@gmail.com" className="flex gap-4">
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#fff8e8] text-[#b8903d]">
                       <FaEnvelope />
                     </div>
                     <div>
                       <h3 className="font-semibold text-slate-900">Email</h3>
-                      <p className="mt-1 text-sm text-slate-600">
-                        iipgja.org@gmail.com
+                      <p className="mt-1 break-all text-sm text-slate-600">
+                        iipgja.contact@gmail.com
                       </p>
                     </div>
                   </a>
                 </div>
               </div>
 
-              <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+              <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8">
                 <div className="flex items-center gap-3">
                   <FaClipboardList className="text-[#b8903d]" size={22} />
                   <h3 className="text-lg font-bold text-slate-900">
@@ -364,7 +364,7 @@ const ContactList = () => {
                       <option value="">Select a test (optional)</option>
                       {courses.map((course) => (
                         <option key={course.id} value={course.title}>
-                          {course.title} — {course.price}
+                          {course.title}
                         </option>
                       ))}
                     </select>
@@ -382,7 +382,7 @@ const ContactList = () => {
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell us what you want to know — test fee, schedule, books, services, etc."
+                    placeholder="Tell us what you want to know — test schedule, books, services, etc."
                     className={`${inputClass} resize-none`}
                   />
                 </div>

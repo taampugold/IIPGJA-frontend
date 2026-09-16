@@ -57,4 +57,5 @@ export interface Course {
   eligibility: string[];
   importantNotes: string[];
   syllabus?: SyllabusPart[];
+  bookIds: number[];
 }

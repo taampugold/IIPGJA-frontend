@@ -10,8 +10,8 @@ const HeroContent = () => {
 
       <h1 className="mb-6 text-3xl font-extrabold leading-tight sm:text-5xl md:text-6xl">
         Become a Certified
-        <span className="block text-yellow-400">
-          Jewellery Appraiser <br/>Gem Appraiser
+        <span className="mt-1 block text-yellow-400">
+          Jewellery Appraiser & Gem Appraiser
         </span>
       </h1>
 
@@ -21,10 +21,10 @@ const HeroContent = () => {
         gemology, gemstone and diamond appearance, grading, and appraising.
       </p>
 
-      <div className="flex flex-wrap gap-5">
+      <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-5">
         <Link
           to="/login"
-          className="group flex items-center justify-center gap-3 rounded-lg bg-yellow-500 px-6 py-3 font-semibold text-slate-900 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-yellow-400 hover:shadow-xl sm:px-8 sm:py-4"
+          className="group flex w-full items-center justify-center gap-3 rounded-lg bg-yellow-500 px-6 py-3 font-semibold text-slate-900 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-yellow-400 hover:shadow-xl sm:w-auto sm:px-8 sm:py-4"
         >
           Apply Now
           <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -32,7 +32,7 @@ const HeroContent = () => {
 
         <button
           type="button"
-          className="group flex items-center justify-center gap-3 rounded-lg border-2 border-white px-6 py-3 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:text-slate-900 sm:px-8 sm:py-4"
+          className="group flex w-full items-center justify-center gap-3 rounded-lg border-2 border-white px-6 py-3 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:text-slate-900 sm:w-auto sm:px-8 sm:py-4"
         >
           <FaDownload className="transition-transform duration-300 group-hover:-translate-y-1" />
           Download Brochure

@@ -12,25 +12,25 @@ const faqs: FAQ[] = [
     id: 1,
     question: "Is this a taught course?",
     answer:
-      "No. IIPGJA conducts an eligibility test only. We do not teach a diploma course on this page. You register or log in to take the assessment.",
+      "No. IIPGJA conducts an eligibility test only. We do not teach a diploma course on this page. The test itself is currently in progress and not yet open.",
   },
   {
     id: 2,
     question: "Who can take this eligibility test?",
     answer:
-      "Anyone seeking professional eligibility validation in jewellery or gem appraisal can register. Requirements may vary by test stream.",
+      "Anyone seeking professional eligibility validation in jewellery or gem appraisal can take this test when it opens. Requirements may vary by test stream.",
   },
   {
     id: 3,
     question: "How do I start the test?",
     answer:
-      "Create an account (Register) or sign in (Login) from the test details page. After authentication you can proceed with the eligibility test.",
+      "The eligibility test is currently in progress and cannot be started yet. You can review the syllabus and books on this page until registration opens.",
   },
   {
     id: 4,
     question: "Is the test conducted online?",
     answer:
-      "Yes. The eligibility test is conducted as an online assessment that you can take after logging in.",
+      "Yes. When it opens, the eligibility test will be conducted as an online assessment.",
   },
   {
     id: 5,
@@ -40,18 +40,6 @@ const faqs: FAQ[] = [
   },
   {
     id: 6,
-    question: "What does the test fee cover?",
-    answer:
-      "The listed fee covers the eligibility assessment and the eligibility result / certificate for that test stream.",
-  },
-  {
-    id: 7,
-    question: "What payment methods are accepted?",
-    answer:
-      "You can pay using UPI, credit cards, debit cards, net banking, and other supported online payment methods after login or registration.",
-  },
-  {
-    id: 8,
     question: "Can I take the test on my mobile phone?",
     answer:
       "Yes. The assessment platform works on mobile phones, tablets, laptops, and desktop computers.",
@@ -90,13 +78,13 @@ const CourseFAQ = () => {
             <button
               type="button"
               onClick={() => toggleFAQ(faq.id)}
-              className="flex w-full items-center justify-between bg-white px-6 py-5 text-left"
+              className="flex w-full items-start justify-between gap-3 bg-white px-4 py-4 text-left sm:px-6 sm:py-5"
             >
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="min-w-0 text-base font-semibold text-gray-900 sm:text-lg">
                 {faq.question}
               </h3>
 
-              <span className="text-3xl font-light text-[#b8903d]">
+              <span className="shrink-0 text-2xl font-light text-[#b8903d] sm:text-3xl">
                 {activeFAQ === faq.id ? "−" : "+"}
               </span>
             </button>
@@ -116,8 +104,8 @@ const CourseFAQ = () => {
         ))}
       </div>
 
-      <div className="mt-12 rounded-2xl bg-gradient-to-r from-[#b8903d] to-[#8a6b2d] p-8 text-center text-white">
-        <h3 className="text-2xl font-bold">Still have questions?</h3>
+      <div className="mt-12 rounded-2xl bg-gradient-to-r from-[#b8903d] to-[#8a6b2d] p-5 text-center text-white sm:p-8">
+        <h3 className="text-xl font-bold sm:text-2xl">Still have questions?</h3>
 
         <p className="mt-3 text-white/90">
           Our team can help you choose the right eligibility test.

@@ -31,7 +31,7 @@ const TopUtilityBar = () => {
 
   return (
     <div className="w-full bg-[#161616] text-white">
-      <div className="flex h-9 w-full items-center justify-end gap-3 px-4 text-xs sm:h-10 sm:gap-5 sm:px-6 sm:text-sm lg:px-8">
+      <div className="flex min-h-9 w-full flex-wrap items-center justify-end gap-x-3 gap-y-1 px-3 py-1.5 text-xs sm:min-h-10 sm:gap-5 sm:px-6 sm:text-sm lg:px-8">
         <time
           dateTime={now.toISOString()}
           className="hidden truncate text-white/80 sm:inline"
@@ -52,7 +52,7 @@ const TopUtilityBar = () => {
           className="relative flex items-center gap-1.5 text-white/90 transition hover:text-white"
         >
           <HiOutlineShoppingCart size={16} />
-          <span>Cart</span>
+          <span className="hidden sm:inline">Cart</span>
           {cartCount > 0 && (
             <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-[#b8903d] px-1 text-[10px] font-bold text-white">
               {cartCount}

@@ -33,13 +33,14 @@ const CourseOverview = ({ course }: Props) => {
         <p className="mt-6 leading-8 text-gray-600">
           IIPGJA does not teach this as a diploma course. This is a formal
           eligibility test to assess your readiness in{" "}
-          {course.category.toLowerCase()}. Register or log in to take the test
-          and receive your eligibility result.
+          {course.category.toLowerCase()}. The online test is currently in
+          progress and is not open yet. Review the syllabus and books while
+          you wait.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-4 text-sm text-slate-700">
-          <span className="rounded-full bg-yellow-100 px-3 py-1 font-semibold text-yellow-800">
-            Fee: {course.price}
+          <span className="rounded-full bg-amber-100 px-3 py-1 font-semibold text-amber-800">
+            In Progress
           </span>
           <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold">
             {course.duration}

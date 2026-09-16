@@ -31,9 +31,9 @@ const stats = [
 
 const Statistics = () => {
   return (
-    <section className="-mt-20 relative z-20 pb-20">
+    <section className="relative z-20 -mt-10 pb-12 sm:-mt-16 sm:pb-20 lg:-mt-20">
       <PageContainer>
-        <div className="grid gap-6 rounded-2xl bg-white p-8 shadow-2xl md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 rounded-2xl bg-white p-4 shadow-2xl sm:gap-6 sm:p-8 md:grid-cols-2 lg:grid-cols-4">
           {stats.map((item) => (
             <div
               key={item.label}

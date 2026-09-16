@@ -7,7 +7,7 @@ const features = [
   {
     icon: "🌐",
     title: "Online Test",
-    description: "Take the assessment online after login or registration.",
+    description: "Online assessment will open when this test is published.",
   },
   {
     icon: "🎓",

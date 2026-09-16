@@ -12,7 +12,7 @@ import TestimonialCard from "./TestimonialCard";
 
 const Testimonials = () => {
   return (
-    <section className="bg-white py-24">
+    <section className="overflow-hidden bg-white py-14 sm:py-24">
       <PageContainer>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -42,7 +42,7 @@ const Testimonials = () => {
             disableOnInteraction: false,
           }}
           pagination={{ clickable: true }}
-          navigation
+          navigation={false}
           spaceBetween={30}
           breakpoints={{
             320: {
@@ -50,9 +50,11 @@ const Testimonials = () => {
             },
             768: {
               slidesPerView: 2,
+              navigation: true,
             },
             1200: {
               slidesPerView: 3,
+              navigation: true,
             },
           }}
         >

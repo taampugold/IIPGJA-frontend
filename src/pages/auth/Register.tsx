@@ -170,8 +170,8 @@ const Register = () => {
     <PageLayout>
       <section className="min-h-screen bg-[#faf9f6] py-12 md:py-16">
         <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
-          <div className="rounded-3xl bg-white p-6 shadow-xl sm:p-8 md:p-10">
-            <h1 className="mb-2 text-center text-3xl font-bold">
+          <div className="rounded-3xl bg-white p-4 shadow-xl sm:p-8 md:p-10">
+            <h1 className="mb-2 text-center text-2xl font-bold sm:text-3xl">
               Create Your Account
             </h1>
 
@@ -187,8 +187,8 @@ const Register = () => {
                 <span className="font-semibold text-[#b8903d]">
                   {test.title}
                 </span>
-                <span className="mt-1 block text-[#b8903d]">
-                  Fee: {test.price}
+                <span className="mt-1 block text-amber-700">
+                  Status: In Progress — this test is not open yet.
                 </span>
               </p>
             )}

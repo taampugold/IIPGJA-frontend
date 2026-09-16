@@ -8,7 +8,7 @@ interface Props {
 
 const CourseSidebar = ({ course }: Props) => {
   return (
-    <div className="h-fit space-y-8 lg:sticky lg:top-28">
+    <div className="h-fit space-y-8 xl:sticky xl:top-28">
       <PaymentCard course={course} />
       <CourseFeatures />
     </div>

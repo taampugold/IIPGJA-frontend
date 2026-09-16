@@ -36,7 +36,7 @@ const CourseSyllabus = ({ course }: Props) => {
               className="flex w-full items-start justify-between gap-3 bg-gray-50 px-4 py-4 text-left transition hover:bg-gray-100 sm:items-center sm:px-6 sm:py-5"
             >
               <div>
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="min-w-0 text-base font-semibold text-gray-900 sm:text-lg">
                   Part ({part.id}) {part.title}
                 </h3>
                 <p className="mt-1 text-sm text-gray-500">

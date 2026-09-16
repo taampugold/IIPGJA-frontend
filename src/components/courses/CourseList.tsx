@@ -37,7 +37,8 @@ const CourseList = () => {
 
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
               We conduct professional eligibility tests for jewellery and gem
-              appraisal streams. Register or log in to take your test.
+              appraisal streams. Tests are currently in progress and not yet
+              open for registration.
             </p>
           </motion.div>
         </PageContainer>

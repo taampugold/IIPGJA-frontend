@@ -3,7 +3,6 @@ import { Link, NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import { HiGlobeAlt, HiUserCircle } from "react-icons/hi";
 import { courses } from "../../data/courses";
 import { useAuth } from "../../context/AuthContext";
-import { useExamCart } from "../../context/ExamCartContext";
 
 interface PortalShellProps {
   children: ReactNode;
@@ -13,7 +12,6 @@ interface PortalShellProps {
 const PortalShell = ({ children, title }: PortalShellProps) => {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
-  const { items, hasExam, clearCart } = useExamCart();
   const [searchParams] = useSearchParams();
   const [mobileNav, setMobileNav] = useState(false);
 
@@ -23,7 +21,6 @@ const PortalShell = ({ children, title }: PortalShellProps) => {
   const selectedId = Number(searchParams.get("test")) || courses[0]?.id;
 
   const handleLogout = () => {
-    clearCart();
     logout();
     navigate("/", { replace: true });
   };
@@ -31,7 +28,7 @@ const PortalShell = ({ children, title }: PortalShellProps) => {
   return (
     <div className="flex min-h-screen bg-white text-slate-800">
       <aside
-        className={`fixed inset-y-0 left-0 z-40 flex w-72 flex-col border-r border-slate-200 bg-[#faf9f6] transition lg:static lg:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-40 flex w-[min(18rem,100%)] flex-col border-r border-slate-200 bg-[#faf9f6] transition lg:static lg:w-72 lg:translate-x-0 ${
           mobileNav ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -88,7 +85,6 @@ const PortalShell = ({ children, title }: PortalShellProps) => {
           <div className="space-y-2">
             {courses.map((course) => {
               const active = course.id === selectedId;
-              const inCart = hasExam(course.id);
               return (
                 <button
                   key={course.id}
@@ -106,22 +102,15 @@ const PortalShell = ({ children, title }: PortalShellProps) => {
                   <img
                     src={course.image}
                     alt=""
-                    className="h-14 w-14 shrink-0 rounded-lg object-cover"
+                    className="h-14 w-11 shrink-0 rounded object-contain"
                   />
                   <div className="min-w-0 flex-1">
                     <p className="line-clamp-2 text-sm font-semibold leading-snug text-slate-800">
                       {course.title}
                     </p>
-                    <div className="mt-1 flex items-center justify-between gap-2">
-                      <p className="text-xs font-bold text-[#b8903d]">
-                        {course.price}
-                      </p>
-                      {inCart && (
-                        <span className="shrink-0 text-[10px] font-semibold text-green-600">
-                          In cart
-                        </span>
-                      )}
-                    </div>
+                    <p className="mt-1 text-xs font-semibold text-amber-700">
+                      In Progress
+                    </p>
                   </div>
                 </button>
               );
@@ -150,7 +139,7 @@ const PortalShell = ({ children, title }: PortalShellProps) => {
       )}
 
       <div className="flex min-h-screen min-w-0 flex-1 flex-col bg-white">
-        <header className="sticky top-0 z-20 flex h-16 items-center justify-between border-b border-slate-200 bg-white px-4 sm:px-8">
+        <header className="sticky top-0 z-20 flex min-h-16 flex-wrap items-center justify-between gap-2 border-b border-slate-200 bg-white px-3 py-2 sm:px-8">
           <div className="flex min-w-0 items-center gap-3">
             <button
               type="button"
@@ -183,8 +172,8 @@ const PortalShell = ({ children, title }: PortalShellProps) => {
             >
               <HiUserCircle size={22} />
             </Link>
-            <span className="hidden rounded-full border border-slate-200 bg-[#faf9f6] px-3 py-1 text-xs font-medium text-slate-600 sm:inline">
-              Cart: {items.length} test{items.length === 1 ? "" : "s"}
+            <span className="hidden rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-800 sm:inline">
+              In Progress
             </span>
             <button
               type="button"

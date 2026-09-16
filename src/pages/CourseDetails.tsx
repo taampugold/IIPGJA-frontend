@@ -6,6 +6,7 @@ import CourseHero from "../components/courses/CourseHero";
 import CourseOverview from "../components/courses/CourseOverview";
 import CourseSyllabus from "../components/courses/CourseSyllabus";
 import CourseFAQ from "../components/courses/CourseFAQ";
+import CourseBooksMaterials from "../components/courses/CourseBooksMaterials";
 import CourseSidebar from "../components/courses/CourseSidebar";
 
 const CourseDetails = () => {
@@ -42,15 +43,19 @@ const CourseDetails = () => {
     <PageLayout>
       <CourseHero course={course} />
 
-      <section className="bg-[#faf9f6] py-10 sm:py-20">
+      <section className="bg-[#faf9f6] py-8 sm:py-20">
         <PageContainer>
-          <div className="grid gap-12 lg:grid-cols-3">
-            <div className="space-y-16 lg:col-span-2">
+          <div className="grid min-w-0 gap-8 xl:grid-cols-3">
+            <div className="min-w-0 space-y-10 xl:col-span-2 xl:space-y-16">
               <CourseOverview course={course} />
               <CourseSyllabus course={course} />
+              <CourseBooksMaterials course={course} />
+              <div className="xl:hidden">
+                <CourseSidebar course={course} />
+              </div>
               <CourseFAQ />
             </div>
-            <div>
+            <div className="hidden xl:block">
               <CourseSidebar course={course} />
             </div>
           </div>

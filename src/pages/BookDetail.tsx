@@ -101,7 +101,7 @@ const BookDetail = () => {
     <PageLayout>
       <section className="w-full bg-[#1c1c1c] py-10 text-white">
         <PageContainer fullWidth>
-          <p className="text-sm text-gray-400">
+          <p className="break-words text-sm text-gray-400">
             <Link to="/books" className="text-[#d4af37] hover:underline">
               Books
             </Link>
@@ -114,9 +114,9 @@ const BookDetail = () => {
       </section>
 
       <section className="bg-[#faf9f6] py-12 sm:py-16">
-        <PageContainer className="grid gap-8 lg:grid-cols-[280px_minmax(0,1fr)_300px]">
+        <PageContainer className="grid min-w-0 gap-8 xl:grid-cols-[280px_minmax(0,1fr)_300px]">
           {/* Cover */}
-          <div className="h-fit w-fit max-w-full justify-self-center lg:sticky lg:top-28 lg:justify-self-start">
+          <div className="h-fit w-fit max-w-full justify-self-center xl:sticky xl:top-28 xl:justify-self-start">
             <BookImageViewer
               src={book.image}
               alt={book.title}
@@ -277,7 +277,7 @@ const BookDetail = () => {
           </div>
 
           {/* Purchase card */}
-          <aside className="h-fit rounded-3xl bg-white p-6 shadow-lg lg:sticky lg:top-28">
+          <aside className="h-fit rounded-3xl bg-white p-6 shadow-lg xl:sticky xl:top-28">
             <div className="rounded-2xl border border-[#b8903d]/40 bg-[#fff8e8] px-4 py-3">
               <span className="block text-sm font-semibold text-slate-700">
                 {format.type} · {selectedLanguage}

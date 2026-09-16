@@ -8,41 +8,46 @@ interface PaymentCardProps {
 const PaymentCard = ({ course }: PaymentCardProps) => {
   return (
     <div className="overflow-hidden rounded-3xl bg-white shadow-xl">
-      <img
-        src={course.image}
-        alt={course.title}
-        className="h-56 w-full object-cover"
-      />
+      <div className="hidden h-64 items-center justify-center bg-[#faf9f6] p-4 xl:flex">
+        <img
+          src={course.image}
+          alt={course.title}
+          className="h-full w-auto max-w-full object-contain"
+        />
+      </div>
 
       <div className="p-6">
-        <span className="rounded-full bg-yellow-100 px-3 py-1 text-sm font-semibold text-yellow-800">
-          Eligibility Test Fee
+        <span className="rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-amber-800">
+          In Progress
         </span>
 
         <div className="mt-5">
-          <p className="text-sm text-gray-500">Test fee</p>
-
-          <div className="mt-2 flex items-center gap-3">
-            <h2 className="text-4xl font-bold text-[#b8903d]">{course.price}</h2>
-          </div>
-
+          <h2 className="text-2xl font-bold text-slate-900">
+            Test not open yet
+          </h2>
           <p className="mt-2 text-sm text-gray-500">
             {course.duration} · {course.mode}
           </p>
+          <p className="mt-4 leading-7 text-gray-600">
+            This eligibility test is currently in progress and cannot be taken
+            or paid for at this time. Check back soon, or contact us for
+            updates.
+          </p>
         </div>
 
-        <Link
-          to={`/register?test=${course.id}`}
-          className="mt-8 block w-full rounded-xl bg-[#b8903d] py-4 text-center text-lg font-semibold text-white transition hover:bg-[#9d7830]"
+        <button
+          type="button"
+          disabled
+          className="mt-8 block w-full cursor-not-allowed rounded-xl bg-slate-200 py-4 text-center text-lg font-semibold text-slate-500"
         >
-          Register for Test
-        </Link>
+          In Progress
+        </button>
 
         <Link
-          to={`/login?test=${course.id}`}
+          to="/contact"
           className="mt-4 block w-full rounded-xl border-2 border-[#b8903d] py-4 text-center font-semibold text-[#b8903d] transition hover:bg-[#b8903d] hover:text-white"
         >
-          Login
+          Contact us
         </Link>
 
         <div className="mt-8 border-t pt-6">
@@ -51,7 +56,7 @@ const PaymentCard = ({ course }: PaymentCardProps) => {
           <div className="space-y-4 text-gray-700">
             <div className="flex justify-between">
               <span>Online eligibility test</span>
-              <span>Yes</span>
+              <span>Coming soon</span>
             </div>
 
             <div className="flex justify-between">
@@ -66,47 +71,14 @@ const PaymentCard = ({ course }: PaymentCardProps) => {
 
             <div className="flex justify-between">
               <span>Eligibility certificate</span>
-              <span>Included</span>
+              <span>On pass</span>
             </div>
 
             <div className="flex justify-between">
               <span>Language</span>
               <span>English / Tamil</span>
             </div>
-
-            <div className="flex justify-between">
-              <span>Support</span>
-              <span>Available</span>
-            </div>
           </div>
-        </div>
-
-        <div className="mt-8 rounded-xl bg-[#faf7ef] p-5">
-          <h3 className="font-semibold text-gray-900">Secure Payments</h3>
-
-          <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
-            <div className="rounded-lg bg-white p-3 text-center shadow">
-              Cards
-            </div>
-            <div className="rounded-lg bg-white p-3 text-center shadow">UPI</div>
-            <div className="rounded-lg bg-white p-3 text-center shadow">
-              Net Banking
-            </div>
-            <div className="rounded-lg bg-white p-3 text-center shadow">
-              EMI
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-8 rounded-xl border border-green-200 bg-green-50 p-4">
-          <h3 className="font-semibold text-green-700">
-            Login or register to take the test
-          </h3>
-
-          <p className="mt-2 text-sm text-green-600">
-            After login you will enter the student portal to view details and
-            pay.
-          </p>
         </div>
       </div>
     </div>

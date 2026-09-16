@@ -100,8 +100,8 @@ const Login = () => {
                 <span className="font-semibold text-[#b8903d]">
                   {test.title}
                 </span>
-                <span className="mt-1 block text-[#b8903d]">
-                  Fee: {test.price}
+                <span className="mt-1 block text-amber-700">
+                  Status: In Progress — this test is not open yet.
                 </span>
               </p>
             )}

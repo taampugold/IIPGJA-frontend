@@ -126,7 +126,7 @@ const CalculatorForm = ({
     <section id="gold-testing-calculator" className="scroll-mt-24 bg-[#faf9f6] -mt-12 py-12 sm:scroll-mt-32 sm:py-20">
       <PageContainer className="h-full sm:-mt-10">
         <div className="overflow-hidden rounded-2xl bg-[#023712] shadow-2xl sm:rounded-3xl">
-         <div className="grid lg:grid-cols-[28%_72%]">
+         <div className="grid min-w-0 xl:grid-cols-[minmax(0,28%)_minmax(0,72%)]">
 
             {/* ================= LEFT SIDE IMAGE ================= */}
             <div className="flex flex-col items-center justify-center gap-6 bg-gradient-to-br from-[#0b4d20] to-[#023712] p-6 lg:p-8">
@@ -158,7 +158,7 @@ const CalculatorForm = ({
             <div className="min-w-0 p-5 sm:p-8 lg:p-12">
               <div className="mb-8 flex justify-end">
                 <div className="rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-right backdrop-blur-sm">
-                  <p className="text-2xl font-bold text-[#ffd700]">
+                  <p className="text-xl font-bold text-[#ffd700] sm:text-2xl">
                     {currentTime.toLocaleTimeString()}
                   </p>
 
@@ -173,7 +173,7 @@ const CalculatorForm = ({
                 </div>
               </div>
               <div className="mb-10">
-                <h2 className="text-3xl font-bold text-white sm:text-5xl lg:text-6xl">
+                <h2 className="text-2xl font-bold text-white sm:text-5xl lg:text-6xl">
                   Gold Purity Testing
                 </h2>
 

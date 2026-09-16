@@ -5,7 +5,7 @@ import StepCard from "./StepCard";
 
 const HowItWorks = () => {
   return (
-    <section className="bg-white py-24 overflow-hidden">
+    <section className="overflow-hidden bg-white py-14 sm:py-24">
       <PageContainer>
         {/* Heading */}
         <motion.div
@@ -13,7 +13,7 @@ const HowItWorks = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mx-auto mb-20 max-w-3xl text-center"
+          className="mx-auto mb-12 max-w-3xl text-center sm:mb-20"
         >
           <span className="font-semibold uppercase tracking-[4px] text-yellow-600">
             Process
@@ -46,13 +46,10 @@ const HowItWorks = () => {
             {steps.map((step, index) => (
               <motion.div
                 key={step.id}
-                initial={{
-                  opacity: 0,
-                  x: index % 2 === 0 ? -100 : 100,
-                }}
+                initial={{ opacity: 0, y: 32 }}
                 whileInView={{
                   opacity: 1,
-                  x: 0,
+                  y: 0,
                 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{
@@ -77,7 +74,7 @@ const HowItWorks = () => {
           transition={{ delay: 0.5 }}
           className="mt-24 text-center"
         >
-          <button className="rounded-full bg-yellow-500 px-10 py-4 text-lg font-semibold text-slate-900 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-yellow-400 hover:shadow-xl">
+          <button className="w-full rounded-full bg-yellow-500 px-10 py-4 text-lg font-semibold text-slate-900 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-yellow-400 hover:shadow-xl sm:w-auto">
             Start Your Journey
           </button>
         </motion.div>

@@ -20,7 +20,7 @@ const sharedEligibility = [
 const sharedNotes = [
   "Certificate is issued only after passing score.",
   "Second attempt must be taken within 30 days of first.",
-  "Fee is non-refundable once the test window is activated.",
+  "Online test access will open when this eligibility test is published.",
 ];
 
 export const courses: Course[] = [
@@ -30,7 +30,7 @@ export const courses: Course[] = [
     category: "Jewellery Appraiser",
     description:
       "Assess your knowledge of jewellery appraisal fundamentals, design concepts, and professional evaluation standards through this eligibility test.",
-    image: "/images/courses/Diploma-in-Jewellery-Design-.webp",
+    image: "/images/books/1.png",
     duration: "2 Hours",
     mode: "Online Test",
     level: "Beginner",
@@ -74,6 +74,7 @@ export const courses: Course[] = [
       "Part 4 — Commodity — Money — Banking",
     ],
     syllabus: jewelleryAppraiserSyllabus,
+    bookIds: [1],
     eligibility: [...sharedEligibility],
     importantNotes: [...sharedNotes],
   },
@@ -84,7 +85,7 @@ export const courses: Course[] = [
     category: "Gem Appraiser",
     description:
       "Evaluate your understanding of gemstone identification, grading, treatments, and professional gem testing through this eligibility test.",
-    image: "/images/courses/Gemmology-study.webp",
+    image: "/images/books/2.png",
     duration: "2 Hours",
     mode: "Online Test",
     level: "Intermediate",
@@ -129,6 +130,7 @@ export const courses: Course[] = [
       "Stone cutting, polishing, and quality control",
     ],
     syllabus: gemAppraiserSyllabus,
+    bookIds: [2],
     eligibility: [...sharedEligibility],
     importantNotes: [...sharedNotes],
   },

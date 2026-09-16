@@ -278,7 +278,7 @@ const ProceedToBuy = () => {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="h-20 w-14 rounded-lg object-cover"
+                    className="h-20 w-14 rounded-lg object-contain"
                   />
                   <div className="min-w-0 flex-1">
                     <p className="line-clamp-2 text-sm font-semibold text-slate-800">

@@ -16,9 +16,8 @@ const AboutSyllabus = () => {
             Syllabus & Examination
           </span>
 
-          <h2 className="mt-4 text-3xl font-bold leading-tight text-slate-900 md:text-4xl lg:text-5xl">
+          <h2 className="mt-4 text-2xl font-bold leading-tight text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl">
             New Syllabus for the Gold and Jewellery Appraiser
-            <br />
             and Gem Appraiser
             <span className="mt-2 block text-[#b8903d]">
               Skill Development Eligibility Examination
@@ -31,7 +30,7 @@ const AboutSyllabus = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55, delay: 0.1 }}
-          className="mt-10 space-y-6 rounded-3xl border border-slate-200 bg-white p-8 leading-8 text-slate-700 shadow-sm md:mt-12 md:p-12"
+          className="mt-10 space-y-6 rounded-3xl border border-slate-200 bg-white p-5 leading-8 text-slate-700 shadow-sm md:mt-12 md:p-12"
         >
           <p>
             Considering the importance of gold and jewellery appraisers, skill
@@ -66,7 +65,7 @@ const AboutSyllabus = () => {
                 (Syllabus prospectus)
               </em>
               <span
-                className="invisible pointer-events-none fixed right-4 top-[10.5rem] z-40 grid w-[min(calc(100vw-2rem),36rem)] grid-cols-2 items-start gap-2 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 opacity-0 shadow-2xl transition group-hover:visible group-hover:opacity-100"
+                className="invisible pointer-events-none fixed right-4 top-[10.5rem] z-40 hidden w-[min(calc(100vw-2rem),36rem)] grid-cols-2 items-start gap-2 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 opacity-0 shadow-2xl transition group-hover:visible group-hover:opacity-100 lg:grid"
                 role="tooltip"
               >
                 <img

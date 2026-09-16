@@ -17,8 +17,8 @@ const CourseSection = () => {
 
           <p className="mx-auto mt-5 max-w-3xl text-lg text-gray-600">
             IIPGJA conducts eligibility tests for jewellery and gem appraisal
-            streams. View test details, fees, and register or log in to take
-            your assessment.
+            streams. Tests are currently in progress and not open for
+            registration.
           </p>
         </div>
 
