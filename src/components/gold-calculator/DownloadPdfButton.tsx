@@ -50,7 +50,7 @@ const DownloadPdfButton = ({ contentRef }: DownloadPdfButtonProps) => {
     <button
       type="button"
       onClick={handleDownload}
-      className="btn-green-flash flex items-center gap-3 rounded-xl bg-green-600 px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-green-700"
+      className="btn-green-flash flex w-full items-center justify-center gap-3 rounded-xl bg-green-600 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-green-700 sm:w-auto sm:px-8 sm:py-4"
     >
       <FaDownload />
       Download PDF

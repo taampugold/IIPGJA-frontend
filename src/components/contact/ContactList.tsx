@@ -156,14 +156,14 @@ const ContactList = () => {
                     </div>
                   </a>
 
-                  <a href="mailto:iipgja@gmail.com" className="flex gap-4">
+                  <a href="mailto:iipgja.org@gmail.com" className="flex gap-4">
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#fff8e8] text-[#b8903d]">
                       <FaEnvelope />
                     </div>
                     <div>
                       <h3 className="font-semibold text-slate-900">Email</h3>
                       <p className="mt-1 text-sm text-slate-600">
-                        iipgja@gmail.com
+                        iipgja.org@gmail.com
                       </p>
                     </div>
                   </a>
@@ -205,7 +205,7 @@ const ContactList = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg md:p-10 lg:col-span-8"
+              className="rounded-3xl border border-slate-200 bg-white p-5 shadow-lg sm:p-8 md:p-10 lg:col-span-8"
             >
               <div className="mb-8 border-b border-slate-100 pb-6">
                 <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">

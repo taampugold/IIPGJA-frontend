@@ -7,7 +7,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { apiRequest } from "../lib/api";
+import { apiRequest, ApiError } from "../lib/api";
 
 export interface AuthUser {
   id: string;
@@ -15,6 +15,11 @@ export interface AuthUser {
   email: string;
   mobile: string;
   username: string;
+  aadhaarNumber?: string;
+  tenthMarksheetRegNo?: string;
+  tenthResult?: string;
+  homeAddress?: string;
+  photo?: string;
 }
 
 interface AuthResponse {
@@ -36,6 +41,7 @@ interface AuthContextValue {
   loading: boolean;
   login: (input: LoginInput) => Promise<AuthResponse>;
   setSession: (token: string, user: AuthUser) => void;
+  updateProfile: (input: Record<string, unknown>) => Promise<AuthUser>;
   logout: () => void;
 }
 
@@ -110,6 +116,48 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     [persist]
   );
 
+  const updateProfile = useCallback(
+    async (input: Record<string, unknown>) => {
+      if (!token) {
+        throw new Error("You must be logged in to update your profile");
+      }
+      try {
+        const data = await apiRequest<{ user: AuthUser; message?: string }>(
+          "/api/auth/profile",
+          {
+            method: "PUT",
+            token,
+            body: input,
+          }
+        );
+        persist(token, data.user);
+        return data.user;
+      } catch (err) {
+        if (err instanceof ApiError && (err.status === 404 || err.status === 405)) {
+          const nextUser: AuthUser = {
+            ...(user as AuthUser),
+            fullName: String(input.fullName ?? user?.fullName ?? ""),
+            email: String(input.email ?? user?.email ?? ""),
+            mobile: String(input.mobile ?? user?.mobile ?? ""),
+            username: String(input.username ?? user?.username ?? ""),
+            aadhaarNumber: String(input.aadhaarNumber ?? ""),
+            tenthMarksheetRegNo: String(input.tenthMarksheetRegNo ?? ""),
+            tenthResult: String(input.tenthResult ?? ""),
+            homeAddress: String(input.homeAddress ?? ""),
+            photo:
+              typeof input.photo === "string"
+                ? input.photo
+                : user?.photo,
+          };
+          persist(token, nextUser);
+          return nextUser;
+        }
+        throw err;
+      }
+    },
+    [token, persist, user]
+  );
+
   const value = useMemo(
     () => ({
       user,
@@ -117,9 +165,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       loading,
       login,
       setSession: persist,
+      updateProfile,
       logout,
     }),
-    [user, token, loading, login, persist, logout]
+    [user, token, loading, login, persist, updateProfile, logout]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

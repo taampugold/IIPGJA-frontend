@@ -17,8 +17,8 @@ const CourseDetails = () => {
       <PageLayout>
         <div className="flex min-h-[60vh] items-center justify-center bg-[#faf9f6]">
           <PageContainer className="text-center">
-            <div className="rounded-2xl bg-white p-10 shadow-xl">
-              <h1 className="mb-4 text-4xl font-bold text-gray-900">
+            <div className="rounded-2xl bg-white p-6 shadow-xl sm:p-10">
+              <h1 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
                 Test Not Found
               </h1>
               <p className="mb-8 text-gray-600">
@@ -42,7 +42,7 @@ const CourseDetails = () => {
     <PageLayout>
       <CourseHero course={course} />
 
-      <section className="bg-[#faf9f6] py-20">
+      <section className="bg-[#faf9f6] py-10 sm:py-20">
         <PageContainer>
           <div className="grid gap-12 lg:grid-cols-3">
             <div className="space-y-16 lg:col-span-2">

@@ -1,6 +1,6 @@
 import { FormEvent, useRef, useState, type ChangeEvent } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import { HiTrash } from "react-icons/hi";
+import { HiTrash, HiEye, HiEyeOff } from "react-icons/hi";
 import CaptchaField, {
   type CaptchaFieldHandle,
 } from "../../components/auth/CaptchaField";
@@ -52,6 +52,8 @@ const Register = () => {
   const [captchaError, setCaptchaError] = useState("");
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const loginLink = testId ? `/login?test=${testId}` : "/login";
 
@@ -282,25 +284,53 @@ const Register = () => {
                     className={`${inputClass} resize-none sm:col-span-2`}
                   />
 
-                  <input
-                    name="password"
-                    required
-                    type="password"
-                    value={form.password}
-                    onChange={handleChange}
-                    placeholder="Password"
-                    className={inputClass}
-                  />
+                  <div className="relative">
+                    <input
+                      name="password"
+                      required
+                      type={showPassword ? "text" : "password"}
+                      value={form.password}
+                      onChange={handleChange}
+                      placeholder="Password"
+                      className={`${inputClass} pr-12`}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword((open) => !open)}
+                      aria-label={showPassword ? "Hide password" : "Show password"}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 transition hover:text-slate-800"
+                    >
+                      {showPassword ? <HiEyeOff size={20} /> : <HiEye size={20} />}
+                    </button>
+                  </div>
 
-                  <input
-                    name="confirmPassword"
-                    required
-                    type="password"
-                    value={form.confirmPassword}
-                    onChange={handleChange}
-                    placeholder="Confirm Password"
-                    className={inputClass}
-                  />
+                  <div className="relative">
+                    <input
+                      name="confirmPassword"
+                      required
+                      type={showConfirmPassword ? "text" : "password"}
+                      value={form.confirmPassword}
+                      onChange={handleChange}
+                      placeholder="Confirm Password"
+                      className={`${inputClass} pr-12`}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowConfirmPassword((open) => !open)}
+                      aria-label={
+                        showConfirmPassword
+                          ? "Hide confirm password"
+                          : "Show confirm password"
+                      }
+                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 transition hover:text-slate-800"
+                    >
+                      {showConfirmPassword ? (
+                        <HiEyeOff size={20} />
+                      ) : (
+                        <HiEye size={20} />
+                      )}
+                    </button>
+                  </div>
 
                   <div className="sm:col-span-2">
                     <CaptchaField

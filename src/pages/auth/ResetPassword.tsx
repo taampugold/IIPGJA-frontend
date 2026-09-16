@@ -60,8 +60,8 @@ const ResetPassword = () => {
   return (
     <PageLayout>
 
-      <section className="min-h-screen bg-[#faf9f6] py-20">
-        <div className="mx-auto max-w-md rounded-3xl bg-white p-10 shadow-xl">
+      <section className="min-h-screen bg-[#faf9f6] px-4 py-12 sm:py-20">
+        <div className="mx-auto max-w-md rounded-3xl bg-white p-6 shadow-xl sm:p-10">
           <div className="mb-8 text-center">
             <img
               src="/images/IIPGJA-logo.png"

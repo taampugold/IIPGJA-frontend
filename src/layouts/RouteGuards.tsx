@@ -1,9 +1,9 @@
 import { Navigate, Outlet, useSearchParams } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-/** Public marketing site — logged-in users are sent to the student portal. */
+/** Public marketing site — logged-in users can still visit. */
 export function WebsiteLayout() {
-  const { user, loading } = useAuth();
+  const { loading } = useAuth();
 
   if (loading) {
     return (
@@ -11,10 +11,6 @@ export function WebsiteLayout() {
         Loading...
       </div>
     );
-  }
-
-  if (user) {
-    return <Navigate to="/app" replace />;
   }
 
   return <Outlet />;

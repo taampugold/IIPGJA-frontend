@@ -34,7 +34,7 @@ const HeroBooksAnimation = () => {
 
   return (
     <div className="hidden justify-center lg:flex">
-      <div className="hero-book-stage h-[min(600px,62vh)] w-[min(380px,346w)] xl:h-[min(680px,72vh)] xl:w-[min(400px,32vw)]">
+      <div className="hero-book-stage h-[min(600px,62vh)] w-[min(380px,34vw)] xl:h-[min(680px,72vh)] xl:w-[min(400px,32vw)]">
         <div className={`hero-book-card ${flipClass}`}>
           <img
             src={activeBook.image}

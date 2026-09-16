@@ -123,9 +123,9 @@ const CalculatorForm = ({
     if (photoInputRef.current) photoInputRef.current.value = "";
   };
   return (
-    <section id="gold-testing-calculator" className="scroll-mt-32 bg-[#faf9f6] -mt-12 py-20">
-      <PageContainer className="h-full -mt-10">
-        <div className="rounded-3xl bg-[#023712] shadow-2xl overflow-hidden">
+    <section id="gold-testing-calculator" className="scroll-mt-24 bg-[#faf9f6] -mt-12 py-12 sm:scroll-mt-32 sm:py-20">
+      <PageContainer className="h-full sm:-mt-10">
+        <div className="overflow-hidden rounded-2xl bg-[#023712] shadow-2xl sm:rounded-3xl">
          <div className="grid lg:grid-cols-[28%_72%]">
 
             {/* ================= LEFT SIDE IMAGE ================= */}
@@ -155,7 +155,7 @@ const CalculatorForm = ({
             </div>
 
             {/* ================= RIGHT SIDE CALCULATOR ================= */}
-            <div className="p-8 lg:p-12">
+            <div className="min-w-0 p-5 sm:p-8 lg:p-12">
               <div className="mb-8 flex justify-end">
                 <div className="rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-right backdrop-blur-sm">
                   <p className="text-2xl font-bold text-[#ffd700]">
@@ -173,7 +173,7 @@ const CalculatorForm = ({
                 </div>
               </div>
               <div className="mb-10">
-                <h2 className="text-6xl font-bold text-white">
+                <h2 className="text-3xl font-bold text-white sm:text-5xl lg:text-6xl">
                   Gold Purity Testing
                 </h2>
 
@@ -183,10 +183,10 @@ const CalculatorForm = ({
                 </p>
               </div>
 
-            <div className="mb-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_14rem] lg:items-center">
-              <div className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-4 gap-y-6">
+            <div className="mb-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_14rem] lg:items-start">
+              <div className="grid grid-cols-1 items-center gap-x-4 gap-y-4 sm:grid-cols-[auto_minmax(0,1fr)] sm:gap-y-6">
                 {/* Company Name */}
-                <label className="whitespace-nowrap text-2xl font-semibold text-white">
+                <label className="text-lg font-semibold text-white sm:whitespace-nowrap sm:text-2xl">
                   Company Name
                 </label>
                 <input
@@ -198,7 +198,7 @@ const CalculatorForm = ({
                 />
 
                 {/* Customer Name */}
-                <label className="whitespace-nowrap text-2xl font-semibold text-white">
+                <label className="text-lg font-semibold text-white sm:whitespace-nowrap sm:text-2xl">
                   Customer Name
                 </label>
                 <input
@@ -210,7 +210,7 @@ const CalculatorForm = ({
                 />
 
                 {/* Loan No. */}
-                <label className="whitespace-nowrap text-2xl font-semibold text-white">
+                <label className="text-lg font-semibold text-white sm:whitespace-nowrap sm:text-2xl">
                   Loan No.
                 </label>
                 <input
@@ -222,7 +222,7 @@ const CalculatorForm = ({
                 />
 
                 {/* Gold Skin Percentage */}
-                <label className="whitespace-nowrap text-2xl font-semibold text-white">
+                <label className="text-lg font-semibold text-white sm:whitespace-nowrap sm:text-2xl">
                   Gold Skin Percentage
                 </label>
                 <div className="flex min-w-0 items-center gap-3">
@@ -240,7 +240,7 @@ const CalculatorForm = ({
                   </span>
                 </div>
 
-                <label className="max-w-[14rem] text-xl font-semibold leading-tight text-white">
+                <label className="text-lg font-semibold leading-tight text-white sm:max-w-[14rem] sm:text-xl">
                   Seal or Mark
                 </label>
                 <input
@@ -251,7 +251,7 @@ const CalculatorForm = ({
                   className={fieldInputClass}
                 />
 
-                <label className="max-w-[14rem] text-xl font-semibold leading-tight text-white">
+                <label className="text-lg font-semibold leading-tight text-white sm:max-w-[14rem] sm:text-xl">
                   Reference ID Mark
                 </label>
                 <input
@@ -264,7 +264,7 @@ const CalculatorForm = ({
               </div>
 
               {/* Material Photo */}
-              <div className="relative h-72">
+              <div className="relative h-48 sm:h-72">
                 {materialPhoto && (
                   <button
                     type="button"
@@ -299,12 +299,12 @@ const CalculatorForm = ({
             </div>
 
             {/* Material Type */}
-<div className="mb-8 flex flex-nowrap items-center gap-4">
-  <label className="shrink-0 whitespace-nowrap text-2xl font-semibold text-white">
+<div className="mb-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+  <label className="shrink-0 text-lg font-semibold text-white sm:whitespace-nowrap sm:text-2xl">
     Material Type
   </label>
 
-  <div className="flex flex-nowrap gap-3">
+  <div className="flex flex-wrap gap-3">
     {/* Metal */}
     <label className="flex shrink-0 cursor-pointer items-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-3 transition hover:border-[#d4af37] lg:gap-3 lg:px-5">
       <input
@@ -356,8 +356,8 @@ const CalculatorForm = ({
 </div>
 
               {/* Weight in Air */}
-              <div className="mb-6 flex items-center gap-4">
-                <label className="w-80 shrink-0 text-2xl font-semibold text-white">
+              <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+                <label className="text-lg font-semibold text-white sm:w-80 sm:shrink-0 sm:text-2xl">
                   Weight in Air (grams)
                 </label>
 
@@ -367,8 +367,8 @@ const CalculatorForm = ({
                   placeholder="3.5630"
                   value={airWeight}
                   onChange={(e) => setAirWeight(e.target.value)}
-                  className="w-40 rounded-xl border border-gray-300 bg-white px-5 py-3 text-lg outline-none transition
-               focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/30 ml-2
+                  className="w-full rounded-xl border border-gray-300 bg-white px-5 py-3 text-lg outline-none transition
+               focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/30 sm:ml-2 sm:w-40
                [appearance:textfield]
                [&::-webkit-inner-spin-button]:appearance-none
                [&::-webkit-outer-spin-button]:appearance-none"
@@ -376,30 +376,28 @@ const CalculatorForm = ({
               </div>
 
               {/* Weight in Water */}
-              <div className="mb-6 flex items-center gap-4">
-                <label className="w-80 shrink-0 text-2xl font-semibold text-white">
+              <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+                <label className="text-lg font-semibold text-white sm:w-80 sm:shrink-0 sm:text-2xl">
                   Weight in Water (grams)
                 </label>
-                <span className="w-[5px]">
-                  <input
+                <input
                     type="number"
                     placeholder="3.3460"
                     value={waterWeight}
                     onChange={(e) => setWaterWeight(e.target.value)}
-                    className="w-40 rounded-xl border border-gray-300 bg-white px-5 py-3 text-lg outline-none transition
-               focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/30 ml-2
+                    className="w-full rounded-xl border border-gray-300 bg-white px-5 py-3 text-lg outline-none transition
+               focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/30 sm:ml-2 sm:w-40
                [appearance:textfield]
                [&::-webkit-inner-spin-button]:appearance-none
                [&::-webkit-outer-spin-button]:appearance-none"
                   />
-                </span>
               </div>
 
-              <div className="mb-8 flex flex-nowrap items-center gap-4">
-                <label className="shrink-0 whitespace-nowrap text-2xl font-semibold text-white">
-                  Touch Stone <br/>Surface Colour
+              <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+                <label className="shrink-0 text-lg font-semibold text-white sm:text-2xl">
+                  Touch Stone Surface Colour
                 </label>
-                <div className="flex flex-nowrap gap-3">
+                <div className="flex flex-wrap gap-3">
                   {[
                     { id: "white", title: "White Gold" },
                     { id: "yellow", title: "Yellow Gold" },
@@ -432,7 +430,7 @@ const CalculatorForm = ({
                 </div>
               )}
               <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-                <span className="text-center text-xl font-bold text-[#f3c96b] sm:text-2xl">
+                <span className="max-w-full text-center text-lg font-bold text-[#f3c96b] sm:text-2xl">
                   Gold Purity Testing Digital Photographic Certificate
                 </span>
                 <button

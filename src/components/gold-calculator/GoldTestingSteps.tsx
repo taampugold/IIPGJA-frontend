@@ -3,11 +3,11 @@ import PageContainer from "../layout/PageContainer";
 
 const GoldTestingSteps = () => {
   return (
-    <section id="how-it-works" className="bg-[#faf9f6] py-20">
+    <section id="how-it-works" className="bg-[#faf9f6] py-12 sm:py-20">
       <PageContainer>
         {/* Section Header */}
         <div className="mb-16 text-center">
-          <h2 className="text-5xl font-bold text-gray-900">
+          <h2 className="text-3xl font-bold text-gray-900 sm:text-5xl">
             How Gold Purity Testing Works
           </h2>
 

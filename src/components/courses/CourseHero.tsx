@@ -8,7 +8,7 @@ interface Props {
 
 const CourseHero = ({ course }: Props) => {
   return (
-    <section className="w-full bg-gradient-to-r from-[#1a1a1a] to-[#2c2c2c] py-20">
+    <section className="w-full bg-gradient-to-r from-[#1a1a1a] to-[#2c2c2c] py-12 sm:py-20">
       <PageContainer
         fullWidth
         className="grid items-center gap-12 lg:grid-cols-2"
@@ -18,7 +18,7 @@ const CourseHero = ({ course }: Props) => {
             Eligibility Test
           </span>
 
-          <h1 className="mt-6 text-4xl font-bold text-white sm:text-5xl">
+          <h1 className="mt-6 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             {course.title}
           </h1>
 
@@ -55,7 +55,7 @@ const CourseHero = ({ course }: Props) => {
           <img
             src={course.image}
             alt={course.title}
-            className="h-[450px] w-full rounded-3xl object-cover shadow-2xl"
+            className="h-56 w-full rounded-3xl object-cover shadow-2xl sm:h-[450px]"
           />
         </div>
       </PageContainer>

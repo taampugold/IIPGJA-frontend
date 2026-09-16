@@ -12,6 +12,7 @@ import ForgotPassword from "../pages/auth/ForgotPassword";
 import ResetPassword from "../pages/auth/ResetPassword";
 import VerifyEmail from "../pages/auth/VerifyEmail";
 import StudentPortal from "../pages/StudentPortal";
+import Profile from "../pages/Profile";
 import Books from "../pages/Books";
 import BookDetail from "../pages/BookDetail";
 import Cart from "../pages/Cart";
@@ -26,7 +27,7 @@ import {
 function AppRoutes() {
   return (
     <Routes>
-      {/* Public marketing website — hidden after login */}
+      {/* Public marketing website */}
       <Route element={<WebsiteLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -54,6 +55,7 @@ function AppRoutes() {
       {/* Separate student portal (not the website) */}
       <Route element={<PortalLayout />}>
         <Route path="/app" element={<StudentPortal />} />
+        <Route path="/app/profile" element={<Profile />} />
       </Route>
 
       <Route path="/dashboard" element={<Navigate to="/app" replace />} />

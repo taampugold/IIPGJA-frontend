@@ -45,7 +45,7 @@ const CertificateFooter = () => {
         </div>
         <div>
           <h4 className="font-semibold text-[#081c24]">Email</h4>
-          <p className="text-gray-600">iipgja@gmail.com</p>
+          <p className="text-gray-600">iipgja.org@gmail.com</p>
         </div>
       </div>
 

@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
+import { HiGlobeAlt, HiUserCircle } from "react-icons/hi";
 import { useCart } from "../../context/CartContext";
+import { useAuth } from "../../context/AuthContext";
 
 const TopUtilityBar = () => {
   const { itemCount: cartCount } = useCart();
+  const { user, logout } = useAuth();
   const [now, setNow] = useState(() => new Date());
 
   useEffect(() => {
@@ -59,12 +62,46 @@ const TopUtilityBar = () => {
 
         <span className="text-white/30">|</span>
 
-        <Link
-          to="/login"
-          className="font-medium text-white/90 transition hover:text-white"
-        >
-          Login
-        </Link>
+        {user ? (
+          <>
+            <Link
+              to="/"
+              aria-label="Website"
+              title="Website"
+              className="flex items-center text-white/90 transition hover:text-white"
+            >
+              <HiGlobeAlt size={16} />
+            </Link>
+            <Link
+              to="/app/profile"
+              aria-label="Profile"
+              title="Profile"
+              className="flex items-center text-white/90 transition hover:text-white"
+            >
+              <HiUserCircle size={16} />
+            </Link>
+            <Link
+              to="/app"
+              className="font-medium text-white/90 transition hover:text-white"
+            >
+              Portal
+            </Link>
+            <button
+              type="button"
+              onClick={logout}
+              className="font-medium text-white/90 transition hover:text-white"
+            >
+              Logout
+            </button>
+          </>
+        ) : (
+          <Link
+            to="/login"
+            className="font-medium text-white/90 transition hover:text-white"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );

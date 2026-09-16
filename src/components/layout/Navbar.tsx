@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex h-28 w-full items-center px-4 py-2 sm:px-6 lg:h-32 lg:px-8">
+      <nav className="flex h-20 w-full min-w-0 items-center px-4 py-2 sm:h-24 sm:px-6 lg:h-32 lg:px-8">
         <Link
           to="/"
           className="flex h-full min-h-0 shrink-0 items-stretch bg-black"

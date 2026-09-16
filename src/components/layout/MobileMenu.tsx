@@ -19,7 +19,7 @@ const MobileMenu = ({ open, setOpen, menu }: MobileMenuProps) => {
 
   return (
     <div className="fixed inset-0 z-[100] bg-black/40 lg:hidden">
-      <div className="absolute right-0 top-0 h-full w-80 bg-white p-6 shadow-2xl">
+      <div className="absolute right-0 top-0 h-full w-full max-w-sm bg-white p-6 shadow-2xl">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-bold text-slate-900">Menu</h2>
 

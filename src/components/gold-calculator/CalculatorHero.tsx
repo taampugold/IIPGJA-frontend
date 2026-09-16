@@ -4,7 +4,7 @@ import PageContainer from "../layout/PageContainer";
 
 const CalculatorHero = () => {
   return (
-    <section className="relative w-full overflow-hidden bg-slate-900 py-24 text-white">
+    <section className="relative w-full overflow-hidden bg-slate-900 py-16 text-white sm:py-24">
       <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-yellow-500/20 blur-3xl" />
       <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-yellow-500/10 blur-3xl" />
 

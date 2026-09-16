@@ -21,11 +21,11 @@ const PageLayout = ({
   showHeader = true,
 }: PageLayoutProps) => {
   return (
-    <>
+    <div className="min-w-0 overflow-x-hidden">
       {showHeader && <Header />}
       {children}
       {showFooter && <Footer />}
-    </>
+    </div>
   );
 };
 

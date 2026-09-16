@@ -23,8 +23,8 @@ const whoShouldTake = [
 const CourseOverview = ({ course }: Props) => {
   return (
     <div className="space-y-16">
-      <section className="rounded-2xl bg-white p-8 shadow-md">
-        <h2 className="mb-6 text-3xl font-bold text-gray-900">
+      <section className="rounded-2xl bg-white p-5 shadow-md sm:p-8">
+        <h2 className="mb-6 text-2xl font-bold text-gray-900 sm:text-3xl">
           About This Eligibility Test
         </h2>
 
@@ -50,8 +50,8 @@ const CourseOverview = ({ course }: Props) => {
         </div>
       </section>
 
-      <section className="rounded-2xl bg-white p-8 shadow-md">
-        <h2 className="mb-8 text-3xl font-bold text-gray-900">
+      <section className="rounded-2xl bg-white p-5 shadow-md sm:p-8">
+        <h2 className="mb-6 text-2xl font-bold text-gray-900 sm:mb-8 sm:text-3xl">
           What This Test Covers
         </h2>
 
@@ -70,8 +70,8 @@ const CourseOverview = ({ course }: Props) => {
         </div>
       </section>
 
-      <section className="rounded-2xl bg-white p-8 shadow-md">
-        <h2 className="mb-8 text-3xl font-bold text-gray-900">
+      <section className="rounded-2xl bg-white p-5 shadow-md sm:p-8">
+        <h2 className="mb-6 text-2xl font-bold text-gray-900 sm:mb-8 sm:text-3xl">
           Who Should Take This Test
         </h2>
 

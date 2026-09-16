@@ -14,9 +14,9 @@ const CourseSyllabus = ({ course }: Props) => {
   const unitCount = syllabus.reduce((sum, part) => sum + part.units.length, 0);
 
   return (
-    <section className="rounded-2xl bg-white p-8 shadow-md">
+    <section className="rounded-2xl bg-white p-5 shadow-md sm:p-8">
       <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-900">Test Syllabus</h2>
+        <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">Test Syllabus</h2>
         <p className="mt-2 text-gray-500">
           {syllabus.length} Parts • {unitCount} Units
         </p>
@@ -33,7 +33,7 @@ const CourseSyllabus = ({ course }: Props) => {
               onClick={() =>
                 setOpenPart(openPart === part.id ? null : part.id)
               }
-              className="flex w-full items-center justify-between bg-gray-50 px-6 py-5 text-left transition hover:bg-gray-100"
+              className="flex w-full items-start justify-between gap-3 bg-gray-50 px-4 py-4 text-left transition hover:bg-gray-100 sm:items-center sm:px-6 sm:py-5"
             >
               <div>
                 <h3 className="text-lg font-semibold text-gray-900">
@@ -54,7 +54,7 @@ const CourseSyllabus = ({ course }: Props) => {
                 {part.units.map((unit) => (
                   <li
                     key={unit.number}
-                    className="flex gap-4 px-6 py-4"
+                    className="flex gap-3 px-4 py-4 sm:gap-4 sm:px-6"
                   >
                     <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#f6edd8] text-sm font-semibold text-[#b8903d]">
                       {unit.number}

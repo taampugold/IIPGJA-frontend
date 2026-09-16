@@ -30,7 +30,7 @@ const CourseList = () => {
               IIPGJA Assessment
             </span>
 
-            <h1 className="mt-5 text-4xl font-bold md:text-6xl">
+            <h1 className="mt-5 text-3xl font-bold sm:text-4xl md:text-6xl">
               Take Your
               <span className="block text-yellow-400">Eligibility Test</span>
             </h1>

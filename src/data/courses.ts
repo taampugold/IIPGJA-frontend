@@ -1,5 +1,6 @@
 import { Course } from "../types/Course";
 import { jewelleryAppraiserSyllabus } from "./jewelleryAppraiserSyllabus";
+import { gemAppraiserSyllabus } from "./gemAppraiserSyllabus";
 
 const sharedIncludes = [
   "Online eligibility test access",
@@ -121,13 +122,13 @@ export const courses: Course[] = [
       includes: [...sharedIncludes],
     },
     topics: [
-      "Gemstone identification",
-      "Color, clarity, cut, and carat grading",
-      "Synthetic and treated stones",
-      "Refractive index and optical properties",
-      "Gem testing instruments overview",
-      "Certification and reporting standards",
+      "Natural, organic, and mineral gemstones",
+      "Pearl, coral, and organic gem testing",
+      "Diamond properties and 4C grading",
+      "Moissanite, synthetics, and detection tools",
+      "Stone cutting, polishing, and quality control",
     ],
+    syllabus: gemAppraiserSyllabus,
     eligibility: [...sharedEligibility],
     importantNotes: [...sharedNotes],
   },

@@ -161,13 +161,13 @@ const Footer = () => {
             </a>
 
             <a
-              href="mailto:iipgja@gmail.com"
+              href="mailto:iipgja.org@gmail.com"
               className="flex gap-4 transition hover:text-yellow-400"
             >
               <FaEnvelope className="mt-1 shrink-0 text-yellow-500" />
 
               <span>
-              iipgja@gmail.com
+              iipgja.org@gmail.com
               </span>
             </a>
 

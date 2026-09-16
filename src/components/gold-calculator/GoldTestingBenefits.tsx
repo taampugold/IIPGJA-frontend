@@ -116,12 +116,12 @@ const GoldTestingBenefits = () => {
           </h2>
 
           <div className="mt-2 flex flex-wrap items-center justify-between gap-4">
-            <p className="text-3xl font-bold leading-tight text-[#b8903d] md:text-4xl lg:text-5xl">
+            <p className="text-2xl font-bold leading-tight text-[#b8903d] sm:text-3xl md:text-4xl lg:text-5xl">
               Digital Photographic Certificate
             </p>
             <a
               href="#gold-testing-calculator"
-              className="btn-gold-flash relative inline-flex shrink-0 items-center overflow-hidden rounded-xl bg-[#b8903d] px-8 py-4 text-xl font-semibold text-white transition hover:bg-[#9c7b31] sm:text-2xl"
+              className="btn-gold-flash relative inline-flex w-full shrink-0 items-center justify-center overflow-hidden rounded-xl bg-[#b8903d] px-6 py-3 text-lg font-semibold text-white transition hover:bg-[#9c7b31] sm:w-auto sm:px-8 sm:py-4 sm:text-xl md:text-2xl"
             >
               <span className="relative z-10">Go to Gold Testing</span>
             </a>

@@ -66,13 +66,13 @@ const CourseFAQ = () => {
   };
 
   return (
-    <section className="mt-20 rounded-3xl bg-white p-8 shadow-lg">
+    <section className="mt-12 rounded-2xl bg-white p-5 shadow-lg sm:mt-20 sm:rounded-3xl sm:p-8">
       <div className="mb-10 text-center">
         <span className="rounded-full bg-[#f6edd8] px-4 py-2 text-sm font-semibold text-[#b8903d]">
           FAQ
         </span>
 
-        <h2 className="mt-5 text-4xl font-bold text-gray-900">
+        <h2 className="mt-5 text-2xl font-bold text-gray-900 sm:text-4xl">
           Frequently Asked Questions
         </h2>
 

@@ -50,14 +50,14 @@ const GoldReport = ({
 
   return (
     <>
-      <section id="gold-testing-results" className="bg-[#faf9f6] -mt-10 py-20">
+      <section id="gold-testing-results" className="bg-[#faf9f6] -mt-10 py-12 sm:py-20">
         <PageContainer>
-          <div className="mb-6 rounded-2xl bg-[#081c24] px-6 py-4 text-center shadow-md">
-            <h3 className="text-2xl font-bold text-white sm:text-3xl">
+          <div className="mb-4 rounded-2xl bg-[#081c24] px-4 py-3 text-center shadow-md sm:mb-6 sm:px-6 sm:py-4">
+            <h3 className="text-lg font-bold text-white sm:text-2xl md:text-3xl">
               Gold Purity Testing Digital Photographic Certificate
             </h3>
           </div>
-          <div className="w-full rounded-3xl bg-[#023712] p-10 shadow-2xl">
+          <div className="w-full rounded-2xl bg-[#023712] p-4 shadow-2xl sm:rounded-3xl sm:p-8 lg:p-10">
 
             <div className="overflow-x-auto">
               <div className="flex min-w-[210mm] justify-center">
@@ -83,13 +83,13 @@ const GoldReport = ({
               </div>
             </div>
 
-            <div className="mt-10 flex flex-wrap justify-center gap-5">
+            <div className="mt-8 flex flex-wrap justify-center gap-3 sm:mt-10 sm:gap-5">
               <PrintButton contentRef={reportRef} />
               <DownloadPdfButton contentRef={reportRef} />
               {onReset && (
                 <button
                   onClick={onReset}
-                  className="flex items-center gap-3 rounded-xl border border-white px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#081c24]"
+                  className="flex w-full items-center justify-center gap-3 rounded-xl border border-white px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#081c24] sm:w-auto sm:px-8 sm:py-4"
                 >
                   <FaRedo />
                   New Calculation

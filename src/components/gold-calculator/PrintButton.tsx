@@ -40,7 +40,7 @@ const PrintButton = ({ contentRef }: PrintButtonProps) => {
     <button
       type="button"
       onClick={handlePrint}
-      className="btn-gold-flash flex items-center gap-3 rounded-xl bg-[#b8903d] px-8 py-4 font-semibold text-white transition hover:bg-[#9d7830]"
+      className="btn-gold-flash flex w-full items-center justify-center gap-3 rounded-xl bg-[#b8903d] px-6 py-3 font-semibold text-white transition hover:bg-[#9d7830] sm:w-auto sm:px-8 sm:py-4"
     >
       <FaPrint />
       Print Report
